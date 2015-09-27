@@ -80,6 +80,14 @@ CREATE TABLE standings
 	);
 commit;
 
+CREATE TABLE club_players_list
+	(club_id INTEGER REFERENCES clubs(club_id),
+	 player_id INTEGER REFERENCES players(player_id),
+	 date_begin DATE NOT NULL,
+	 date_end DATE
+	);
+commit;
+
 
 
 CREATE GENERATOR gen_player_id;

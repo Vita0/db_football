@@ -31,4 +31,8 @@ INSERT INTO standings (season_id, team_id, victories, draws, losses, goals, miss
 INSERT INTO standings (season_id,team_id, victories, draws, losses, goals, missed_goals, diff_goals)
 	VALUES(1,1,0,1,0,2,2,0);
 
+INSERT INTO club_players_list (club_id, player_id, date_begin, date_end)
+	VALUES (1, 1, '20-JUL-2015', NULL);
+INSERT INTO club_players_list (club_id, player_id, date_begin, date_end)
+	VALUES (1, 2, '13-MAY-2005', NULL);
 	
