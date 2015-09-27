@@ -52,10 +52,10 @@ CREATE TABLE matches
 	(match_id INTEGER NOT NULL PRIMARY KEY,
 	 match_date DATE,
 	 season_id INTEGER REFERENCES seasons(season_id),
-	 first_team_id INTEGER REFERENCES clubs(club_id),
-	 second_team_id INTEGER REFERENCES clubs(club_id),
-	 first_team_goals INTEGER,
-	 second_team_goals INTEGER
+	 first_club_id INTEGER REFERENCES clubs(club_id),
+	 second_club_id INTEGER REFERENCES clubs(club_id),
+	 first_club_goals INTEGER,
+	 second_club_goals INTEGER
 	);
 commit;
 
@@ -70,7 +70,7 @@ commit;
 
 CREATE TABLE standings
 	(season_id INTEGER REFERENCES seasons(season_id),
-	 team_id INTEGER REFERENCES clubs(club_id),
+	 club_id INTEGER REFERENCES clubs(club_id),
 	 victories SMALLINT,
 	 draws SMALLINT,
 	 losses SMALLINT,

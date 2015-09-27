@@ -18,7 +18,7 @@ INSERT INTO leagues (name, kind)
 INSERT INTO seasons (league_id, period)
 	VALUES (1/*lid*/, '2015/2016');
 
-INSERT INTO matches (match_date, season_id, first_team_id, second_team_id, first_team_goals, second_team_goals)
+INSERT INTO matches (match_date, season_id, first_club_id, second_club_id, first_club_goals, second_club_goals)
 	VALUES('26-SEP-2015',1,2,1,2,2);
 
 INSERT INTO goals (match_id, player_id, goal_minute, autogoal)
@@ -26,10 +26,10 @@ INSERT INTO goals (match_id, player_id, goal_minute, autogoal)
 INSERT INTO goals (match_id, player_id, goal_minute, autogoal)
 	VALUES(1,2,41,0);
 
-INSERT INTO standings (season_id, team_id, victories, draws, losses, goals, missed_goals, diff_goals)
+INSERT INTO standings (season_id, club_id, victories, draws, losses, goals, missed_goals, diff_goals)
 	VALUES(1,1,0,1,0,2,2,0);
-INSERT INTO standings (season_id,team_id, victories, draws, losses, goals, missed_goals, diff_goals)
-	VALUES(1,1,0,1,0,2,2,0);
+INSERT INTO standings (season_id, club_id, victories, draws, losses, goals, missed_goals, diff_goals)
+	VALUES(1,2,0,1,0,2,2,0);
 
 INSERT INTO club_players_list (club_id, player_id, date_begin, date_end)
 	VALUES (1, 1, '20-JUL-2015', NULL);
