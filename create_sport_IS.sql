@@ -63,7 +63,7 @@ CREATE TABLE goals
 	(goal_id INTEGER NOT NULL PRIMARY KEY,
 	 player_id INTEGER REFERENCES players(player_id),
 	 match_id INTEGER REFERENCES matches(match_id),
-	 goal_minute INTEGER,
+	 goal_minute SMALLINT,
 	 autogoal CHAR(1)
 	);
 commit;
