@@ -91,7 +91,7 @@ commit;
 
 CREATE TABLE current_club_players_list
 	(club_id INTEGER REFERENCES clubs(club_id),
-	 player_id INTEGER REFERENCES players(player_id),
+	 player_id INTEGER REFERENCES players(player_id)
 	);
 commit;
 
