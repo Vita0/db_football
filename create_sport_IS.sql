@@ -1,7 +1,7 @@
-SET NAMES WIN1251;
+SET NAMES CYRL;
 create database 'E:\Program Files\Firebird\db\sport_IS.fdb'
 user 'SYSDBA' password 'masterkey'
-DEFAULT CHARACTER SET WIN1251;
+DEFAULT CHARACTER SET CYRL;
 
 connect 'E:\Program Files\Firebird\db\sport_IS.fdb'
 user 'SYSDBA' password 'masterkey';
@@ -54,8 +54,8 @@ CREATE TABLE matches
 	 season_id INTEGER REFERENCES seasons(season_id),
 	 first_club_id INTEGER REFERENCES clubs(club_id),
 	 second_club_id INTEGER REFERENCES clubs(club_id),
-	 first_club_goals INTEGER,
-	 second_club_goals INTEGER
+	 first_club_goals SMALLINT,
+	 second_club_goals SMALLINT
 	);
 commit;
 
@@ -76,11 +76,12 @@ CREATE TABLE standings
 	 losses SMALLINT,
 	 goals SMALLINT,
 	 missed_goals SMALLINT,
-	 diff_goals SMALLINT
+	 diff_goals SMALLINT,
+	 points SMALLINT
 	);
 commit;
 
-CREATE TABLE club_players_list
+CREATE TABLE club_players_list_history
 	(club_id INTEGER REFERENCES clubs(club_id),
 	 player_id INTEGER REFERENCES players(player_id),
 	 date_begin DATE NOT NULL,
@@ -88,6 +89,11 @@ CREATE TABLE club_players_list
 	);
 commit;
 
+CREATE TABLE current_club_players_list
+	(club_id INTEGER REFERENCES clubs(club_id),
+	 player_id INTEGER REFERENCES players(player_id),
+	);
+commit;
 
 
 CREATE GENERATOR gen_player_id;
