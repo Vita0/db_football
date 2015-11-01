@@ -1,11 +1,14 @@
 ALTER TABLE matches
-	ADD first_club_shorts SMALLINT
-
+	ADD first_club_shorts SMALLINT;
 ALTER TABLE matches
-	ADD second_club_shorts SMALLINT
-
+	ADD second_club_shorts SMALLINT;
+	
 ALTER TABLE matches
-	ADD first_club_percent SMALLINT /*владение м€чом*/
+	ADD first_club_percent SMALLINT; /*владение м€чом*/
+ALTER TABLE matches
+	ADD second_club_shorts SMALLINT;
+
+
 	
 CREATE TABLE yellow_cards
 	(match_id INTEGER REFERENCES matches(match_id),
