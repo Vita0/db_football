@@ -74,7 +74,9 @@ CREATE VIEW selectClubsAndPoints as select Clubs.name, Standings.points from Clu
 commit;
 
 /*команда 1 команда 2 счёт*/
-/*CREATE VIEW selectMatchesResults as select Clubs.name as club1, Clubs.name as club2, Matches.first_club_goals, Matches.second_club_goals from Clubs, Matches where Matches.first_club_id = Clubs.club_id or Matches.second_club_id = Clubs.club_id;
+/*select c1.name as club1, c2.name as club2, m.first_club_goals, m.second_club_goals
+    from Matches m inner join clubs c1 on c1.club_id = m.first_club_id
+    inner join clubs c2 on c2.club_id = m.second_club_id;
 commit;*/
 
 /*голы: игрок дата_матча минута_матча*/
