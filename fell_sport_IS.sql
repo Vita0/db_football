@@ -2,17 +2,19 @@ connect 'E:\Program Files\Firebird\db\sport_IS.fdb'
 	user 'SYSDBA' password 'masterkey';
 
 INSERT INTO players (name, birthdate, pos) 
-	VALUES ('Дзюба', '22-AUG-1988', 'Forward');
+	VALUES ('Dzuba', '22-AUG-1988', 'Forward');
 INSERT INTO players (name, birthdate, pos) 
-	VALUES ('Кержаков', '10-JUN-1982', 'Forward');
+	VALUES ('Kerjakov', '10-JUN-1982', 'Forward');
+INSERT INTO players (name, birthdate, pos) 
+	VALUES ('Lodigin', '1-JUN-1990', 'Goalkeeper');
 	
 INSERT INTO clubs (name, birthdate, nickname, country)
-	VALUES ('Зенит', '25-MAY-1925', 'Сине-Бело-Голубые', 'Россия');
+	VALUES ('Zenit', '25-MAY-1925', 'Blue-White-Blue', 'Russia');
 INSERT INTO clubs (name, birthdate, nickname, country)
-	VALUES ('Спартак', '18-APR-1922', 'Красно-Белые', 'Россия');
+	VALUES ('Spartak', '18-APR-1922', 'White-Red', 'Russia');
 
 INSERT INTO leagues (name, kind)
-	VALUES ('РФПЛ', 'Country');
+	VALUES ('RFPL', 'Country');
 
 /*lid = (select league_id from leagues where name = 'РФПЛ');*/
 INSERT INTO seasons (league_id, period)
