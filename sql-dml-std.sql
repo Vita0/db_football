@@ -199,3 +199,47 @@ end;
 /*
 execute procedure deleteNotUseLeagues;
 */
+
+/*
+*
+* Реализовать следующие запросы:
+*
+*/
+
+/* 1 Вывести 10 самых результативных матчей за всю историю. */
+create view selectMoreResultsMatches as select first 10 * from matches order by (first_club_goals+second_club_goals) desc;
+
+/*
+SQL> select * from selectMoreResultsMatches;
+
+    MATCH_ID  MATCH_DATE    SEASON_ID FIRST_CLUB_ID SECOND_CLUB_ID FIRST_CLUB_GOALS SECOND_CLUB_GOALS FIRST_CLUB_YELLOW SECOND_CLUB_YELLOW FIRST_CLUB_RED SECOND
+_CLUB_RED FIRST_CLUB_PERCENT FIRST_CLUB_PRESSURE SECOND_CLUB_PRESSURE FIRST_CLUB_SHORTS SECOND_CLUB_SHORTS FIRST_CLUB_SHORTS_IN_TARGET SECOND_CLUB_SHORTS_IN_TAR
+GET
+============ =========== ============ ============= ============== ================ ================= ================= ================== ============== ======
+========= ================== =================== ==================== ================= ================== =========================== =========================
+===
+           2 2015-10-25             1        100003              1                7                 0            <null>             <null>         <null>
+   <null>             <null>              <null>               <null>            <null>             <null>                      <null>                       <nu
+ll>
+           1 2015-09-26             1             2              1                2                 2            <null>             <null>         <null>
+   <null>             <null>              <null>               <null>            <null>             <null>                      <null>                       <nu
+ll>
+*/
+
+/* 2 Вывести 5 команд с наибольшим количеством побед за выбранный период. */
+create view selectTopClubs as select name from clubs where club_id in (select first 5 club_id from standings order by points);
+
+/*
+SQL> select * from selectTopClubs;
+
+NAME
+================
+Zenit
+Spartak
+CSKA
+
+SQL>
+*/
+
+/* 3 Удалить неиспользуемые лиги. */
+/* см. 12 пункт выше */
