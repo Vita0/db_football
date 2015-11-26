@@ -276,6 +276,7 @@ execute procedure deleteNotUseLeagues;
 */
 
 /* 1 Вывести 10 самых результативных матчей за всю историю. */
+/* При условии что таблица goals и таблица matches соответствуют друг другу */
 create or alter view selectMoreResultsMatches as
 select c1.name as club1, c2.name as club2, m.first_club_goals, m.second_club_goals, m.match_date
 from (select * from
