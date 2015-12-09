@@ -1,4 +1,4 @@
-SET NAMES CYRL;
+﻿SET NAMES CYRL;
 create database 'E:\Program Files\Firebird\db\sport_IS.fdb'
 user 'SYSDBA' password 'masterkey'
 DEFAULT CHARACTER SET CYRL;

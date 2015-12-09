@@ -1,4 +1,4 @@
-connect 'E:\Program Files\Firebird\db\sport_IS.fdb' 
+Ôªøconnect 'E:\Program Files\Firebird\db\sport_IS.fdb' 
 	user 'SYSDBA' password 'masterkey';
 
 INSERT INTO players (name, birthdate, pos) 
@@ -16,7 +16,7 @@ INSERT INTO clubs (name, birthdate, nickname, country)
 INSERT INTO leagues (name, kind)
 	VALUES ('RFPL', 'Country');
 
-/*lid = (select league_id from leagues where name = '–‘œÀ');*/
+/*lid = (select league_id from leagues where name = '–†–§–ü–õ');*/
 INSERT INTO seasons (league_id, period)
 	VALUES (1/*lid*/, '2015/2016');
 

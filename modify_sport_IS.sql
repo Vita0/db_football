@@ -1,7 +1,7 @@
-CREATE DOMAIN event_type
+п»їCREATE DOMAIN event_type
 AS varchar(11) CHECK (value IS NULL or VALUE IN 
 	('GOAL', 'YELLOW', 'RED', 'INJURY', 'REPLACEMENT'));
-							/* травма    замена */
+							/* С‚СЂР°РІРјР°    Р·Р°РјРµРЅР° */
 
 CREATE TABLE events
 	(player_id INTEGER REFERENCES players(player_id),
@@ -10,7 +10,7 @@ CREATE TABLE events
 	 event event_type,
 	 ag_io CHAR(1)
 	);
-/* ag_io - GOAL: 1-autogoal, 0-goal;  YELLOW,RED: NULL; INJURY: 1-нанёс травму, 0-получил травму; REPLACEMENT: 1-зашёл на поле, 0-вышел */
+/* ag_io - GOAL: 1-autogoal, 0-goal;  YELLOW,RED: NULL; INJURY: 1-РЅР°РЅС‘СЃ С‚СЂР°РІРјСѓ, 0-РїРѕР»СѓС‡РёР» С‚СЂР°РІРјСѓ; REPLACEMENT: 1-Р·Р°С€С‘Р» РЅР° РїРѕР»Рµ, 0-РІС‹С€РµР» */
 
 insert into events (player_id, match_id, event_minute, ag_io, event)
 	select player_id, match_id, goal_minute, autogoal, 'GOAL' from goals;
@@ -26,15 +26,15 @@ DROP table goals;
 commit;
 
 ALTER TABLE matches
-	ADD first_club_percent SMALLINT; /*владение мячом*/
+	ADD first_club_percent SMALLINT; /*РІР»Р°РґРµРЅРёРµ РјСЏС‡РѕРј*/
 
 ALTER TABLE matches
-	ADD first_club_shorts SMALLINT; /*удары*/
+	ADD first_club_shorts SMALLINT; /*СѓРґР°СЂС‹*/
 ALTER TABLE matches
 	ADD second_club_shorts SMALLINT;
 
 /*ALTER TABLE matches
-	ADD first_club_shorts_in_target SMALLINT;*/ /*удары в створ*/
+	ADD first_club_shorts_in_target SMALLINT;*/ /*СѓРґР°СЂС‹ РІ СЃС‚РІРѕСЂ*/
 /*ALTER TABLE matches
 	ADD second_club_shorts_in_target SMALLINT;*/
 
@@ -114,6 +114,6 @@ insert into events (player_id, match_id, event_minute, event, ag_io)
 	
 
 /*ALTER TABLE matches
-	ADD first_club_pressure SMALLINT;*/ /*владение на чужой половине (% от своего владения, а не от времени всего матча)*/
+	ADD first_club_pressure SMALLINT;*/ /*РІР»Р°РґРµРЅРёРµ РЅР° С‡СѓР¶РѕР№ РїРѕР»РѕРІРёРЅРµ (% РѕС‚ СЃРІРѕРµРіРѕ РІР»Р°РґРµРЅРёСЏ, Р° РЅРµ РѕС‚ РІСЂРµРјРµРЅРё РІСЃРµРіРѕ РјР°С‚С‡Р°)*/
 /*ALTER TABLE matches
 	ADD second_club_pressure SMALLINT;*/
