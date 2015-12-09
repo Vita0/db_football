@@ -112,7 +112,10 @@ insert into events (player_id, match_id, event_minute, event, ag_io)
 insert into events (player_id, match_id, event_minute, event, ag_io)
 	VALUES (5, 2, 90, 'RED', 0);
 	
-
+ALTER TABLE seasons
+ADD CONSTRAINT con_uq unique (league_id, period);
+	
+	
 /*ALTER TABLE matches
 	ADD first_club_pressure SMALLINT;*/ /*владение на чужой половине (% от своего владения, а не от времени всего матча)*/
 /*ALTER TABLE matches
