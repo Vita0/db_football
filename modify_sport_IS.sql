@@ -114,6 +114,8 @@ insert into events (player_id, match_id, event_minute, event, ag_io)
 	
 ALTER TABLE seasons
 ADD CONSTRAINT con_uq unique (league_id, period);
+ALTER TABLE standings
+ADD CONSTRAINT con_uq_standings unique (season_id, club_id);
 	
 	
 /*ALTER TABLE matches
